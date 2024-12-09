@@ -1,5 +1,17 @@
 Storage in the HPC cluster
 ==========================
-de
-dede
-e
+
+User home directory ($HOME, /shared/home/<username>) is available on all nodes
+of the cluster.
+
+Moreover each job is made available a scratch storage area on a fast local
+storage. Such strach area, 
+referred by the TMP_DIR environment variable, is available only on the node where
+the job gets executed (i.e. it is not shared among all nodes).
+
+.. NOTE ::
+   
+   Please note that the scratch area referred by the TMP_DIR environment variable
+   is automatically deleted when the job completes its execution. It is therefore
+   up to the job to copy the needed output files to the home directory or to
+   another persistent storage.
