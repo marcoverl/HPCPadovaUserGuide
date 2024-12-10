@@ -68,6 +68,8 @@ This is an example of a SLURM submit file to run a previously compiled applicati
   #SBATCH --error=/shared/home/sgaravat/JOB-%x.%j.err
   #SBATCH --nodes=2
   #SBATCH --ntasks-per-node=3
+  #SBATCH --mail-type=ALL
+  #SBATCH --mail-user=massimo.sgaravatto@pd.infn.it
   module load openmpi-5.0.5_gcc-12.4.0
   srun -l --mpi=pmix /shared/home/sgaravat/hello
 

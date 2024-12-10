@@ -19,4 +19,5 @@ Contents
    register
    storage
    appsoftware
+   gpu
    mpi
