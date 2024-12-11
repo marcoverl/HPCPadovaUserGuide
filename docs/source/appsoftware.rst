@@ -1,5 +1,6 @@
 Application software
 ====================
+.. _appsw:
 
 Application software in the cluster is managed through
 `environment modules <https://modules.readthedocs.io/en/latest>`__.

@@ -12,12 +12,8 @@ The nodes are interconnected through a high bandwith, low latency Infiniband net
 
 Such resources are managed through the SLURM resource manager.
 
-User interface
-^^^^^^^^^^^^^^
-cld-ter-ui-01 is the node configured as user interface.
-Such node is the node that must be used to submit your SLURM jobs.
 
-SLURM Partitions
-^^^^^^^^^^^^^^^^
-
+Available SLURM partitions
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+TBC
 
