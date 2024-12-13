@@ -20,7 +20,7 @@ For the User Inteface node, you can see the available software modules using the
 
 ::
    
-  [sgaravat@cld-ter-ui-01 ~]$ module avail
+  [<username>@cld-ter-ui-01 ~]$ module avail
   -------------------------------------- /usr/share/Modules/modulefiles ---------------------------------------
   dot  module-git  module-info  modules  null  use.own  
 
@@ -29,7 +29,7 @@ For the User Inteface node, you can see the available software modules using the
 
   Key:
   modulepath  
-  [sgaravat@cld-ter-ui-01 ~]$ 
+  [<username>@cld-ter-ui-01 ~]$ 
 
 
 
@@ -39,12 +39,12 @@ To use one of this application, you need to load the relevant module using the
 
 ::
    
-  [sgaravat@cld-ter-ui-01 ~]$ which mpirun
+  [<username>@cld-ter-ui-01 ~]$ which mpirun
   /usr/bin/which: no mpirun in (/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin)
-  [sgaravat@cld-ter-ui-01 ~]$ module load openmpi-5.0.5_gcc-12.4.0
-  [sgaravat@cld-ter-ui-01 ~]$ which mpirun
+  [<username>@cld-ter-ui-01 ~]$ module load openmpi-5.0.5_gcc-12.4.0
+  [<username>@cld-ter-ui-01 ~]$ which mpirun
   /shared/sw/openmpi-5.0.5_gcc-12.4.0/bin/mpirun
-  [sgaravat@cld-ter-ui-01 ~]$ 
+  [<username>@cld-ter-ui-01 ~]$ 
 
 
 
@@ -55,14 +55,14 @@ using the ``module unload <module>`` command, e.g.:
 
 ::
 
-  [sgaravat@cld-ter-ui-01 ~]$ module list
+  [<username>@cld-ter-ui-01 ~]$ module list
   Currently Loaded Modulefiles:
    1) openmpi-5.0.5_gcc-12.4.0   2) use.own  
-  [sgaravat@cld-ter-ui-01 ~]$ module unload use.own
-  [sgaravat@cld-ter-ui-01 ~]$ module list
+  [<username>@cld-ter-ui-01 ~]$ module unload use.own
+  [<username>@cld-ter-ui-01 ~]$ module list
   Currently Loaded Modulefiles:
    1) openmpi-5.0.5_gcc-12.4.0  
-  [sgaravat@cld-ter-ui-01 ~]$ 
+  [<username>@cld-ter-ui-01 ~]$ 
 
 
 
@@ -86,23 +86,23 @@ In the following example the gcc-13.4.0 module was created by the end user:
 
 ::
 
-  [sgaravat@cld-ter-ui-01 ~]$ module load use.own
-  [sgaravat@cld-ter-ui-01 ~]$ module avail
+  [<username>@cld-ter-ui-01 ~]$ module load use.own
+  [<username>@cld-ter-ui-01 ~]$ module avail
   ---------------------------------------------------------- /usr/share/Modules/modulefiles ----------------------------------------------------------
   dot  module-git  module-info  modules  null  use.own  
  
   -------------------------------------------------------------- /shared/sw/modulefiles --------------------------------------------------------------
   gcc-12.4.0  openmpi-5.0.5_gcc-12.4.0  
  
-  ------------------------------------------------------- /shared/home/sgaravat/privatemodules --------------------------------------------------------
+  ------------------------------------------------------- /shared/home/<username>/privatemodules --------------------------------------------------------
   gcc-13.4.0  null  
  
   Key:
   loaded  modulepath  
-  [sgaravat@cld-ter-ui-01 ~]$ module load gcc-13.4.0
-  [sgaravat@cld-ter-ui-01 ~]$ echo $PATH
-  /shared/sw/gcc-13.4.0/bin:/shared/home/sgaravat/.local/bin:/shared/home/sgaravat/bin:/root/.local/bin:/root/bin:/usr/share/Modules/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
-  [sgaravat@cld-ter-ui-01 ~]$ 
+  [<username>@cld-ter-ui-01 ~]$ module load gcc-13.4.0
+  [<username>@cld-ter-ui-01 ~]$ echo $PATH
+  /shared/sw/gcc-13.4.0/bin:/shared/home/<username>/.local/bin:/shared/home/<username>/bin:/root/.local/bin:/root/bin:/usr/share/Modules/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+  [<username>@cld-ter-ui-01 ~]$ 
 
 Use environment modules with SLURM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -112,14 +112,14 @@ is loaded before executing the user payload:
 ::
    
   #!/bin/sh
-  #SBATCH --output=/shared/home/sgaravat/JOB-%x.%j.out
-  #SBATCH --error=/shared/home/sgaravat/JOB-%x.%j.err
+  #SBATCH --output=/shared/home/<username>/JOB-%x.%j.out
+  #SBATCH --error=/shared/home/<username>/JOB-%x.%j.err
   #SBATCH --nodes=2
   #SBATCH --ntasks-per-node=3
   #SBATCH --mail-type=ALL
-  #SBATCH --mail-user=massimo.sgaravatto@pd.infn.it
+  #SBATCH --mail-user=<email-address>
   module load openmpi-5.0.5_gcc-12.4.0
-  srun -l --mpi=pmix /shared/home/sgaravat/hello
+  srun -l --mpi=pmix /shared/home/<username>/hello
 
 
 

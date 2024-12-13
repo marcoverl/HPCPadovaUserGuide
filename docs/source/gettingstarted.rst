@@ -12,7 +12,7 @@ this cluster with the credentials that you have been given:
 
 ::
 
-   ssh <username>cld-ter-ui-01.pd.infn.it
+   ssh <username>@cld-ter-ui-01.pd.infn.it
 
    
 From this node you can submit batch jobs and or launch interactive jobs..
@@ -44,11 +44,11 @@ This is a simple bash script to submit a batch job:
    #SBATCH --mem=20G # Total memory requested per node
    #SBATCH --time=01:00:00 # Time limit (1 hour in this example)
    #SBATCH --partition cpu-nodes
-   #SBATCH --output=/shared/home/sgaravat/JOB.out
-   #SBATCH --error=/shared/home/sgaravat/JOB.err
+   #SBATCH --output=/shared/home/<username>/JOB.out
+   #SBATCH --error=/shared/home/<username>/JOB.err
    #SBATCH --mail-type=ALL # Notify via email about all job events
-   #SBATCH --mail-user=massimo.sgaravatto@pd.infn.it
-   srun /shared/home/sgaravat/<my-app>
+   #SBATCH --mail-user=<email-address>
+   srun /shared/home/<username>/<my-app>
 
 In this script we specified:
 
@@ -80,7 +80,7 @@ Example:
 
 ::
    
-   [sgaravat@cld-ter-ui-01 ~]$ salloc --nodes 2 --ntasks-per-node=4 --time 00:10:00
+   [<username>@cld-ter-ui-01 ~]$ salloc --nodes 2 --ntasks-per-node=4 --time 00:10:00
    salloc: Granted job allocation 704
    salloc: Nodes cld-ter-[01-02] are ready for job
    
@@ -97,7 +97,7 @@ Example:
    bash-5.1$ exit
    exit
    salloc: Relinquishing job allocation 704
-   [sgaravat@cld-ter-ui-01 ~]$ 
+   [<username>@cld-ter-ui-01 ~]$ 
 
 
 .. NOTE ::

@@ -9,13 +9,13 @@ requested:
 ::
    
   #!/bin/sh
-  #SBATCH --output=/shared/home/sgaravat/JOB-%x.%A.%a.out
-  #SBATCH --error=/shared/home/sgaravat/JOB-%x.%A.%a.err
+  #SBATCH --output=/shared/home/<username>/JOB-%x.%A.%a.out
+  #SBATCH --error=/shared/home/<username>/JOB-%x.%A.%a.err
   #SBATCH --ntasks=6
   #SBATCH --nodes=2
   #SBATCH --partition gpu-nodes
   #SBATCH --gres gpu:nvidia-h100:2
   #SBATCH --mail-type=ALL
-  #SBATCH --mail-user=massimo.sgaravatto@pd.infn.it
+  #SBATCH --mail-user=<email-address>
   cd $TMP_DIR
-  srun -l /shared/home/sgaravat/myapp.sh
+  srun -l /shared/home/<username>/myapp.sh
