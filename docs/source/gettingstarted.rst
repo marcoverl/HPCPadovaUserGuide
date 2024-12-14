@@ -133,7 +133,7 @@ apptainer:
 
 
 
-More information about apptainer is available at the `Apptainer home page<https://apptainer.org/>`__.
+More information about apptainer is available at the `Apptainer home page <https://apptainer.org/>`__.
 
 
 More information
