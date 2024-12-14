@@ -6,7 +6,7 @@ In the HPC cluster, you can use the OpenMPI software to run parallel jobs.
 The OpenMPI is provided through an ennvironment module.
 
 Compiling
-^^^^^^^^^
+---------
 
 In the following example a simple MPI application is compiled using ``mpicc``
 after having loaded
@@ -56,7 +56,7 @@ the relevant openmpi software module:
 
 
 Submitting a MPI SLURM job
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 This is an example of a SLURM submit file to run a previously compiled application:
 

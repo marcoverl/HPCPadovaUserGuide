@@ -14,7 +14,7 @@ It is not intended to explain in detail how SLURM can be used.
    This documentation is under development.
 
 Who can use the INFN Padova HPC cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 
 
 The INFN Padova HPC cluster has been funded by the Terabit PNRR project and therefore

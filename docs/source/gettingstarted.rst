@@ -2,11 +2,11 @@ Getting started
 ================
 
 Apply for an account
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 TBC
 
 Login to the user inteface
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 cld-ter-ui-01.pd.infn.it is the node configured as user interface. Use ssh to connect to
 this cluster with the credentials that you have been given:
 
@@ -23,14 +23,18 @@ From this node you can submit batch jobs and or launch interactive jobs..
 
 
 Manage your application software
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In this cluster, applications software is managed through environment modules.
-If the software that you need is not available yet in the cluster, you can install it
-and write the relevant environment module. Documentation is available in 
+--------------------------------
+If the software that you need is not installed in the cluster and it
+is not available through CVMFS, 
+you can install it
+and make it available through a relevant environment module. Documentation is available in 
 :ref:`Application software<appsw>`.
 
+Another possible option is installing your software inside a container.
+
+     
 Submit a batch job
-^^^^^^^^^^^^^^^^^^
+------------------
 Once you have your compiled program and prepared its input data,
 you can submit the batch job on the cluster's compute nodes.
 
@@ -67,8 +71,8 @@ To submit the job:
 
 
 
-Launch an interactive job
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Run an interactive job
+-----------------------
 
 Using `salloc`, you allocate resources and spawn a shell that can be used to execute parallel
 tasks.
@@ -106,9 +110,34 @@ Example:
    finished, in order not to waste resources.
 
 
+Manage containerized applications
+---------------------------------
+You can also manage containerized applications using SLURM.
+For this cluster we provide apptainer (previously known as singularity) as
+framework to run such applications.
+
+The following is a simple example that run a container (myexample.sif) using
+apptainer:
+
+::
+
+  #!/bin/sh
+  #SBATCH --output=/shared/home/<username>/JOB.out
+  #SBATCH --error=/shared/home/<username>/JOB.err
+  #SBATCH --ntasks=2
+  #SBATCH --mem=20G
+  #SBATCH --mail-type=ALL
+  #SBATCH --mail-user<email-address>
+  cd $TMP_DIR
+  srun apptainer run /shared/home/<username>/myexample.sif
+
+
+
+More information about apptainer is available at the `Apptainer home page<https://apptainer.org/>`__.
+
 
 More information
-^^^^^^^^^^^^^^^^^^^
+----------------
 
 Please refer to the `SLURM
 official documentation <https://slurm.schedmd.com/>`__ to have all the needed information
@@ -117,5 +146,5 @@ about SLURM usage.
 
 
 Getting help
-^^^^^^^^^^^^
+------------
 TBC 

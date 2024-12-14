@@ -2,13 +2,24 @@ Application software
 ====================
 .. _appsw:
 
-Application software in the cluster is managed through
-`environment modules <https://modules.readthedocs.io/en/latest>`__.
+Application software in the cluster is managed through:
+
+* CVMFS
+* Environment modules
 
 
+Application software through CVMFS
+----------------------------------
+Many experiments are using CVMFS to distribute the relevant software.
+In the HPC Cluster CVMFS is installed on every compute node.
+By default the LHC and EGI repositories are made available. If some other
+repository is needed, please contact the suppport team.
+  
+Application software throgh Environment modules
+-----------------------------------------------
 
-
-Software module can be loaded and unloaded dynamically and atomically.
+`Environment software modules <https://modules.readthedocs.io/en/latest>`__
+can be loaded and unloaded dynamically and atomically.
 Basically when you load a software module, you set the needed environment variables
 (e.g. PATH, LD_LIBRARY_PATH, etc.) needed to use that software.
 

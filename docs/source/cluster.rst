@@ -14,6 +14,12 @@ Such resources are managed through the SLURM resource manager.
 
 
 Available SLURM partitions
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
+A Slurm partition exposes a set of resources, with some possible
+constraints (e.g. on the number of maximum running jobs, on the job time
+limit, etc.).
+
+IN the INFN Padova HPC cluster the following partitions are available:
+
 TBC
 
