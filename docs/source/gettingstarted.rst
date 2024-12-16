@@ -47,7 +47,8 @@ This is a simple bash script to submit a batch job:
    #SBATCH --ntasks-per-node=200 # Number of tasks per node
    #SBATCH --mem=20G # Total memory requested per node
    #SBATCH --time=01:00:00 # Time limit (1 hour in this example)
-   #SBATCH --partition cpu-nodes
+   #SBATCH --partition onlycpus
+   #SBATCH --qos fast
    #SBATCH --output=/shared/home/<username>/JOB.out
    #SBATCH --error=/shared/home/<username>/JOB.err
    #SBATCH --mail-type=ALL # Notify via email about all job events
@@ -57,7 +58,7 @@ This is a simple bash script to submit a batch job:
 In this script we specified:
 
 * the needed resources for this job (--nodes, --ntasks-per-node and --mem)
-* The partition to be used for this job (--partition)
+* The partition and the QOS to be used for this job (--partition and --qos)  
 * The maximum wallclocktime for this job (--time)
 * The standard output and error (--output and --error)
 * Who to be notified via e-mail and the relevant events (--mail-user and --mail-type)
