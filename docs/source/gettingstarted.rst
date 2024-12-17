@@ -71,6 +71,28 @@ To submit the job:
   > sbatch [opts] <job_script>
 
 
+The main user's commands of SLURM are reported in the table below.  Please
+consult the man pages for more information.
+
++---------------------------+-----------------------------------------------------+
+| Command                   | Description                                         |
++===========================+=====================================================+
+| sbatch <batch script>	    | Submits a batch script to the queue                 |
++---------------------------+-----------------------------------------------------+
+| squeue                    | Lists jobs in the queue                             | 
++---------------------------+-----------------------------------------------------+
+| sinfo	                    | Prints queue information about nodes and partitions |
++---------------------------+-----------------------------------------------------+
+| scancel <jobid>           | Cancels a job from the queue                        |
++---------------------------+-----------------------------------------------------+
+| scontrol show job <jobid> | Displays detailed information for a job             |
++---------------------------+-----------------------------------------------------+
+| sprio	                    | Displays information about scheduling priority      |
++---------------------------+-----------------------------------------------------+
+| seff <jobid>              | Checks the efficiency for a completed job           |
++---------------------------+-----------------------------------------------------+
+
+  
 
 Run an interactive job
 -----------------------
