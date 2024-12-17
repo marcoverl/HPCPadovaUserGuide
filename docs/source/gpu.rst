@@ -9,8 +9,8 @@ requested:
 ::
    
   #!/bin/sh
-  #SBATCH --output=/shared/home/<username>/JOB-%x.%A.%a.out
-  #SBATCH --error=/shared/home/<username>/JOB-%x.%A.%a.err
+  #SBATCH --output=/shared/home/<username>/JOB-%x.out
+  #SBATCH --error=/shared/home/<username>/JOB-%x.err
   #SBATCH --ntasks=6
   #SBATCH --nodes=2
   #SBATCH --partition gpus
@@ -18,4 +18,5 @@ requested:
   #SBATCH --mail-type=ALL
   #SBATCH --mail-user=<email-address>
   cd $TMP_DIR
-  srun -l /shared/home/<username>/myapp.sh
+  module load cuda-12.6
+  srun -l /shared/home/<username>/<myapp>
