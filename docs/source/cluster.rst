@@ -24,10 +24,6 @@ When you submit a job, you must specify the partition and the QOS to be used (un
 you are fine with the default values)
 
 
-.. NOTE ::
-
-   Il seguente dobbiamo ancora definirlo. Questa e' una proposta
-
 
 In the INFN Padova HPC cluster the following partitions are available:
 

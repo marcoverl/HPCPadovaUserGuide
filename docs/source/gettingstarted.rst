@@ -1,9 +1,24 @@
 Getting started
 ================
+.. WARNING::
+
+   The HPC cluster is not yet in production.
+   For the time being we are giving access to this facility only to a limited
+   set of beta testers.
+
 
 Apply for an account
 --------------------
-TBC
+
+Please contact support AT cloudveneto.it for an account on the HPC cluster.
+In the request please specify:
+
+* your institution
+* your role in this institution  
+* a description of the experiment/use case/project for which you need such HPC
+  resources
+* the estimated needed resources
+
 
 Login to the user inteface
 -------------------------
@@ -170,4 +185,9 @@ about SLURM usage.
 
 Getting help
 ------------
-TBC 
+
+For the time being please contact support AT cloudveneto.it for support
+request. A dedicated HPC support mailing list will likely be created in the
+future.
+
+
