@@ -3,6 +3,7 @@ Storage in the HPC cluster
 
 User home directory ($HOME, /shared/home/<username>) is available on all nodes
 of the cluster.
+A quota of 100 GB is assigned to each user on this storage area.
 
 Moreover each job is made available a scratch storage area on a fast local
 storage. Such strach area, 
