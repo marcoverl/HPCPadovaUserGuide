@@ -79,6 +79,13 @@ In this script we specified:
 * Who to be notified via e-mail and the relevant events (--mail-user and --mail-type)
 * The program to be executed (<my-app>)  
 
+
+
+.. WARNING ::
+   
+   If you don't specify a memory directive, in this HPC cluster by default a 2 GB/core requirement is automatically set.
+
+  
 To submit the job:
 
 ::
