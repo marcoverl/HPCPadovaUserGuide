@@ -10,7 +10,7 @@ Getting started
 Apply for an account
 --------------------
 
-Please contact support AT cloudveneto.it for an account on the HPC cluster.
+Please contact support-hpc AT pd.infn.it for an account on the HPC cluster.
 In the request please specify:
 
 * your institution
@@ -193,8 +193,7 @@ about SLURM usage.
 Getting help
 ------------
 
-For the time being please contact support AT cloudveneto.it for support
-request. A dedicated HPC support mailing list will likely be created in the
-future.
+Please contact support-hpc AT pd.infn.it for support
+request.
 
 

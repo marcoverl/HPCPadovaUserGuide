@@ -52,7 +52,7 @@ The following table summarizes which are the QOS available for the **onlycpus** 
 | **verylong**             | 7 days           | 20 cores, 80 GB of RAM memory  | 20       |
 +--------------------------+------------------+--------------------------------+----------+
 
-The following table summarizes which are the QOS available for the **gpus* partition:
+The following table summarizes which are the QOS available for the **gpus** partition:
 
 
 +--------------------------+------------------+---------------------------------+----------+
