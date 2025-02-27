@@ -6,7 +6,7 @@ The resources provided by the INFN Padova HPC cluster are the following:
 *  6 CPU only nodes cld-ter-01..06: each node has 2 AMD EPYC 9654 processors
    (192 Cores, 384 threads in total) and 1.5 TB of RAM
 *  6 CPU-GPU nodes cld-ter-gpu-01..06: each node has 2 AMD EPYC 9654 processors
-   (192 Cores, 384 threads in total), 1.5 TB of RAM and 4 NVIDIA H100 GPUs
+   (192 Cores, 384 threads in total), 1.5 TB of RAM and 4 NVIDIA H100 80GB HBM3 GPUs
 
 The nodes are interconnected through a high bandwith, low latency Infiniband network.
 
@@ -59,16 +59,16 @@ The following table summarizes which are the QOS available for the **gpus** part
 | QOS                      | MaxWallClockTime | Max usable Resources            | Priority |
 +==========================+==================+=================================+==========+
 | **normal** (default QOS) | 24 hours         | 60 cores, 240 GB of RAM memory, | 60       |
-|                          |                  | 4 GPUs H100                     |          |
+|                          |                  | 4 GPUs NVIDIA H100 80GB HBM3    |          |
 +--------------------------+------------------+---------------------------------+----------+
 | **fast**                 | 2 hours          | 80 cores, 320 GB of RAM memory, | 100      |
-|                          |                  | 4 GPUs H100                     |          |
+|                          |                  | 4 GPUs NVIDIA H100 80GB HBM3    |          |
 +--------------------------+------------------+---------------------------------+----------+
 | **long**                 | 3 days           | 40 cores, 160 GB of RAM memory, | 40       |
-|                          |                  | 2 GPUs H100                     |          |
+|                          |                  | 2 GPUs NVIDIA H100 80GB HBM3    |          |
 +--------------------------+------------------+---------------------------------+----------+
 | **verylong**             | 7 days           | 20 cores, 80 GB of RAM memory,  | 20       |
-|                          |                  | 2 GPUs H100                     |          |
+|                          |                  | 2 GPUs NVIDIA H100 80GB HBM3    |          |
 +--------------------------+------------------+---------------------------------+----------+
 
 
@@ -79,17 +79,17 @@ The following table summarizes which are the QOS available for the **enipiml** p
 | QOS                       | MaxWallClockTime | Max usable Resources              | Priority |
 +===========================+==================+===================================+==========+
 | **enipiml** (default QOS) | 30 days          | 384 cores, 1500 GB of RAM memory, | 60       |
-|                           |                  | 4 GPUs H100                       |          |
+|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
 +---------------------------+------------------+-----------------------------------+----------+
 | **normal**                | 24 hours         | 60 cores, 240 GB of RAM memory,   | 60       |
-|                           |                  | 4 GPUs H100                       |          |
+|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
 +---------------------------+------------------+-----------------------------------+----------+
 | **fast**                  | 2 hours          | 80 cores, 320 GB of RAM memory,   | 100      |
-|                           |                  | 4 GPUs H100                       |          |
+|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
 +---------------------------+------------------+-----------------------------------+----------+
 | **long**                  | 3 days           | 40 cores, 160 GB of RAM memory,   | 40       |
-|                           |                  | 2 GPUs H100                       |          |
+|                           |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |
 +---------------------------+------------------+-----------------------------------+----------+
 | **verylong**              | 7 days           | 20 cores, 80 GB of RAM memory,    | 20       |
-|                           |                  | 2 GPUs H100                       |          |
+|                           |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |
 +---------------------------+------------------+-----------------------------------+----------+
