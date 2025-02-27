@@ -83,9 +83,13 @@ Create your own application module
 The modules in /shared/sw/modulefiles are the ones made available by the
 administrators.
 
-You can create your own module, creating the relevant modulefile in the
-$HOME/privatemodules directory.
-To use this module, you need to load first the ``use.own`` module:
+You can create your own module:
+
+* by installing the relevant software in your home directory (which is
+  shared between all the nodes of the cluster)
+* by creating the relevant modulefile in the $HOME/privatemodules directory.
+  
+To use your "private" module, you need to load first the ``use.own`` module:
 
 ::
 
