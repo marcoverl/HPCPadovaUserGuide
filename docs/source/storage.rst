@@ -21,3 +21,7 @@ the job gets executed (i.e. it is not shared among all nodes).
    is automatically deleted when the job completes its execution. It is therefore
    up to the job to copy the needed output files to the home directory or to
    another persistent storage.
+
+
+Users of the ENIPRED project are made available a 20 TB disk space available on all
+nodes at /shared/home/enipred. No backups are perfomed on this area.

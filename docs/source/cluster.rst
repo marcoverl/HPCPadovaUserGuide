@@ -30,6 +30,7 @@ In the INFN Padova HPC cluster the following partitions are available:
 * **onlycpus**: this partition groups compute nodes that don't have GPU. This is the default partition
 * **gpus**: the partition that encompasses compute nodes with GPUs.  
 * **enipiml**: this partition is usable only by the users of the ENIPIML project.  
+* **enipred**: this partition is usable only by the users of the ENIPRED project.  
    
 
 .. NOTE ::
@@ -79,6 +80,29 @@ The following table summarizes which are the QOS available for the **enipiml** p
 | QOS                       | MaxWallClockTime | Max usable Resources              | Priority |
 +===========================+==================+===================================+==========+
 | **enipiml** (default QOS) | 30 days          | 384 cores, 1500 GB of RAM memory, | 60       |
+|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
++---------------------------+------------------+-----------------------------------+----------+
+| **normal**                | 24 hours         | 60 cores, 240 GB of RAM memory,   | 60       |
+|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
++---------------------------+------------------+-----------------------------------+----------+
+| **fast**                  | 2 hours          | 80 cores, 320 GB of RAM memory,   | 100      |
+|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
++---------------------------+------------------+-----------------------------------+----------+
+| **long**                  | 3 days           | 40 cores, 160 GB of RAM memory,   | 40       |
+|                           |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |
++---------------------------+------------------+-----------------------------------+----------+
+| **verylong**              | 7 days           | 20 cores, 80 GB of RAM memory,    | 20       |
+|                           |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |
++---------------------------+------------------+-----------------------------------+----------+
+
+
+The following table summarizes which are the QOS available for the **enipred** partition:
+
+
++---------------------------+------------------+-----------------------------------+----------+
+| QOS                       | MaxWallClockTime | Max usable Resources              | Priority |
++===========================+==================+===================================+==========+
+| **enipred** (default QOS) | 30 days          | 384 cores, 1500 GB of RAM memory, | 60       |
 |                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
 +---------------------------+------------------+-----------------------------------+----------+
 | **normal**                | 24 hours         | 60 cores, 240 GB of RAM memory,   | 60       |
