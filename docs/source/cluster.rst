@@ -8,7 +8,14 @@ The resources provided by the INFN Padova HPC cluster are the following:
 *  6 CPU-GPU nodes cld-ter-gpu-01..06: each node has 2 AMD EPYC 9654 processors
    (192 Cores, 384 threads in total), 1.5 TB of RAM and 4 NVIDIA H100 80GB HBM3 GPUs
 
-The nodes are interconnected through a high bandwith, low latency Infiniband network.
+These nodes are interconnected through a high bandwith, low latency Infiniband network.
+
+The cluster also integrates a server owned by the the "Quantum Matter and
+Information" group:
+
+* a node (cld-dfa-gpu-06) with 2 Intel Xeon Platinum 8452Y processors
+  y(72 cores, 144 threads), 1.5 TB
+  of RAM and 1 NVIDIA L40S GPU.
 
 Such resources are managed through the SLURM resource manager.
 
@@ -31,6 +38,8 @@ In the INFN Padova HPC cluster the following partitions are available:
 * **gpus**: the partition that encompasses compute nodes with GPUs.  
 * **enipiml**: this partition is usable only by the users of the ENIPIML project.  
 * **enipred**: this partition is usable only by the users of the ENIPRED project.  
+* **qst**: this partition is usable only by the users of the "Quantum Matter
+  and Information" group:
    
 
 .. NOTE ::
@@ -38,82 +47,33 @@ In the INFN Padova HPC cluster the following partitions are available:
    Please use the `gpus` partition only if your job needs one or more GPU accelerators.  
 
   
-The following table summarizes which are the QOS available for the **onlycpus** partition:
+The following table summarizes which are the QOS available:
 
 
-+--------------------------+------------------+--------------------------------+----------+
-| QOS                      | MaxWallClockTime | Max usable Resources           | Priority |
-+==========================+==================+================================+==========+
-| **normal** (default QOS) | 24 hours         | 60 cores, 240 GB of RAM memory | 60       |
-+--------------------------+------------------+--------------------------------+----------+
-| **fast**                 | 2 hours          | 80 cores, 320 GB of RAM memory | 100      |
-+--------------------------+------------------+--------------------------------+----------+
-| **long**                 | 3 days           | 40 cores, 160 GB of RAM memory | 40       |
-+--------------------------+------------------+--------------------------------+----------+
-| **verylong**             | 7 days           | 20 cores, 80 GB of RAM memory  | 20       |
-+--------------------------+------------------+--------------------------------+----------+
-
-The following table summarizes which are the QOS available for the **gpus** partition:
 
 
-+--------------------------+------------------+---------------------------------+----------+
-| QOS                      | MaxWallClockTime | Max usable Resources            | Priority |
-+==========================+==================+=================================+==========+
-| **normal** (default QOS) | 24 hours         | 60 cores, 240 GB of RAM memory, | 60       |
-|                          |                  | 4 GPUs NVIDIA H100 80GB HBM3    |          |
-+--------------------------+------------------+---------------------------------+----------+
-| **fast**                 | 2 hours          | 80 cores, 320 GB of RAM memory, | 100      |
-|                          |                  | 4 GPUs NVIDIA H100 80GB HBM3    |          |
-+--------------------------+------------------+---------------------------------+----------+
-| **long**                 | 3 days           | 40 cores, 160 GB of RAM memory, | 40       |
-|                          |                  | 2 GPUs NVIDIA H100 80GB HBM3    |          |
-+--------------------------+------------------+---------------------------------+----------+
-| **verylong**             | 7 days           | 20 cores, 80 GB of RAM memory,  | 20       |
-|                          |                  | 2 GPUs NVIDIA H100 80GB HBM3    |          |
-+--------------------------+------------------+---------------------------------+----------+
++--------------------------+------------------+-----------------------------------+----------+----------------------------------------------+
+| QOS                      | MaxWallClockTime | Max usable Resources              | Priority | Notes                                        |
++==========================+==================+===================================+==========+==============================================+
+| **normal**               | 24 hours         | 60 cores, 240 GB of RAM memory    | 60       | Default QoS for onlycpus and gpus partition  |
+|                          |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |                                              | 
++--------------------------+------------------+-----------------------------------+----------+----------------------------------------------+
+| **fast**                 | 2 hours          | 80 cores, 320 GB of RAM memory    | 100      |                                              |
+|                          |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |                                              |
++--------------------------+------------------+-----------------------------------+----------+----------------------------------------------+
+| **long**                 | 3 days           | 40 cores, 160 GB of RAM memory    | 40       |                                              |
+|                          |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |                                              |
++--------------------------+------------------+-----------------------------------+----------+----------------------------------------------+
+| **verylong**             | 7 days           | 20 cores, 80 GB of RAM memory     | 20       |                                              |
+|                          |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |                                              |
++--------------------------+------------------+-----------------------------------+----------+----------------------------------------------+
+| **enipiml**              | 30 days          | 384 cores, 1500 GB of RAM memory, | 60       | Default QoS for the enipiml partition        |
+|                          |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |                                              |
++--------------------------+------------------+-----------------------------------+----------+----------------------------------------------+
+| **enipred**              | 30 days          | 384 cores, 1500 GB of RAM memory, | 60       | Default QoS for the enipred partition        |
+|                          |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |                                              |
++--------------------------+------------------+-----------------------------------+----------+----------------------------------------------+
+| **qst**                  | 30 days          | 144 cores, 1500 GB of RAM memory, | 60       | Default QoS for the qst partition            |
+|                          |                  | 1 GPU NVIDIA L40S                 |          |                                              | 
++--------------------------+------------------+-----------------------------------+----------+----------------------------------------------+
 
-
-The following table summarizes which are the QOS available for the **enipiml** partition:
-
-
-+---------------------------+------------------+-----------------------------------+----------+
-| QOS                       | MaxWallClockTime | Max usable Resources              | Priority |
-+===========================+==================+===================================+==========+
-| **enipiml** (default QOS) | 30 days          | 384 cores, 1500 GB of RAM memory, | 60       |
-|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-| **normal**                | 24 hours         | 60 cores, 240 GB of RAM memory,   | 60       |
-|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-| **fast**                  | 2 hours          | 80 cores, 320 GB of RAM memory,   | 100      |
-|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-| **long**                  | 3 days           | 40 cores, 160 GB of RAM memory,   | 40       |
-|                           |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-| **verylong**              | 7 days           | 20 cores, 80 GB of RAM memory,    | 20       |
-|                           |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-
-
-The following table summarizes which are the QOS available for the **enipred** partition:
-
-
-+---------------------------+------------------+-----------------------------------+----------+
-| QOS                       | MaxWallClockTime | Max usable Resources              | Priority |
-+===========================+==================+===================================+==========+
-| **enipred** (default QOS) | 30 days          | 384 cores, 1500 GB of RAM memory, | 60       |
-|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-| **normal**                | 24 hours         | 60 cores, 240 GB of RAM memory,   | 60       |
-|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-| **fast**                  | 2 hours          | 80 cores, 320 GB of RAM memory,   | 100      |
-|                           |                  | 4 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-| **long**                  | 3 days           | 40 cores, 160 GB of RAM memory,   | 40       |
-|                           |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
-| **verylong**              | 7 days           | 20 cores, 80 GB of RAM memory,    | 20       |
-|                           |                  | 2 GPUs NVIDIA H100 80GB HBM3      |          |
-+---------------------------+------------------+-----------------------------------+----------+
