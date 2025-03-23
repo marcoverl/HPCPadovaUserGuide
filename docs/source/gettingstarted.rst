@@ -149,6 +149,42 @@ Example:
    [<username>@cld-ter-ui-01 ~]$ 
 
 
+
+You can also log (using SSH) on the node allocated using salloc, e.g.:
+
+
+::
+   
+   [sgaravat@cld-ter-ui-01 ~]$ salloc -c 4 --ntasks=1 --mem=10G --qos=verylong
+   salloc: Granted job allocation 54351
+   salloc: Nodes cld-ter-03 are ready for job
+
+
+You can now log on the node allocated via salloc (cld-ter-03 in this example) and run your application. Please note that
+you will be "confined" to the allocated resources (4 cores and 10 GB of RAM memory in this example):
+
+::
+   
+   bash-5.1$ ssh cld-ter-03
+   sgaravat@cld-ter-03's password:
+   Last login: Sat Mar 15 07:23:25 2025 from 192.168.60.178
+   [sgaravat@cld-ter-03 ~]$ ./myapp
+
+
+When you have done, use 'exit' to terminate the interactive job:
+
+
+::
+   
+   [sgaravat@cld-ter-03 ~]$ exit
+   logout
+   Connection to cld-ter-03 closed.
+   bash-5.1$ exit
+   exit
+   salloc: Relinquishing job allocation 54351
+   [sgaravat@cld-ter-ui-01 ~]$ 
+
+
 .. NOTE ::
    
    Please remember to close the interactive job with the command `exit` when you have
