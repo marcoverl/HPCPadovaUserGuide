@@ -20,3 +20,23 @@ requested:
   cd $TMP_DIR
   module load cuda-12.6
   srun -l /shared/home/<username>/<myapp>
+
+
+
+In the following example a L40S GPU (usable only from the qst partition) is requested:
+
+  ::
+   
+  #!/bin/sh
+  #SBATCH --output=/shared/home/<username>/JOB-%x.out
+  #SBATCH --error=/shared/home/<username>/JOB-%x.err
+  #SBATCH --ntasks=30
+  #SBATCH --nodes=1
+  #SBATCH --mem=50G
+  #SBATCH --partition qst
+  #SBATCH --gres gpu:nvidia-l40s:1
+  #SBATCH --mail-type=ALL
+  #SBATCH --mail-user=<email-address>
+  cd $TMP_DIR
+  module load cuda-12.6
+  srun -l /shared/home/<username>/<myapp>
