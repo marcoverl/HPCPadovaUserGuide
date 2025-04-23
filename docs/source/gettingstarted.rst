@@ -115,6 +115,16 @@ consult the man pages for more information.
 +---------------------------+-----------------------------------------------------+
 
   
+Debug your job
+--------------
+If you need to debug the execution of a submitted job, and for this purpose
+you need to log on the relevant worer node:
+
+
+::
+   
+   $ srun --pty --overlap --jobid <slurmjobid> bash
+
 
 Run an interactive job
 -----------------------
