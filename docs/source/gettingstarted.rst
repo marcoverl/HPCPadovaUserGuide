@@ -1,11 +1,5 @@
 Getting started
 ================
-.. WARNING::
-
-   The HPC cluster is not yet in production.
-   For the time being we are giving access to this facility only to a limited
-   set of beta testers.
-
 
 Apply for an account
 --------------------
