@@ -7,7 +7,7 @@ Application software in the cluster is managed through:
 * CVMFS
 * Environment modules
 
-In addition, software can be managed through Anaconda virtual environments created by the user in the user's home directory.
+In addition, software can be managed through Conda virtual environments created by the user in the user's home directory.
 
 
 Application software through CVMFS
@@ -149,16 +149,16 @@ Other information
 For more information on environment module, please see:
 https://modules.readthedocs.io/en/latest.
 
-Create a new virtual environment with Anaconda
+Create a new virtual environment with Conda
 -----------------------------------------------
 
-You can use the Anaconda module available on the cluster to create a virtual environment and install packages in it. This is useful when you need to install custom versions of packages that must comply with the specific requirements of your software.
+You can use the Conda module available on the cluster to create a virtual environment and install packages in it. This is useful when you need to install custom versions of packages that must comply with the specific requirements of your software.
 
-The first time, you'll need to load the Anaconda module and initialize it:
+The first time, you'll need to load the Conda module and initialize it:
 
 ::
 
-    [<username>@cld-ter-ui-01 ~]$ module load anaconda3-2024.10-1
+    [<username>@cld-ter-ui-01 ~]$ module load conda-miniforge3-25.3.1
     [<username>@cld-ter-ui-01 ~]$ conda init
 
 ::
@@ -169,12 +169,13 @@ The ``conda init`` command will add lines to the ``/shared/home/<username>/.bash
 Create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a new virtual environment, load the Anaconda module and run the following commands:
+To create a new virtual environment, load the Conda module and run the following commands:
 
 ::
 
-    [<username>@cld-ter-ui-01 ~]$ module load anaconda3-2024.10-1
-    [<username>@cld-ter-ui-01 ~]$ conda create --name myenv python=3.8
+    [<username>@cld-ter-ui-01 ~]$ module load conda-miniforge3-25.3.1
+    [<username>@cld-ter-ui-01 ~]$ source .bashrc
+    (base) [<username>@cld-ter-ui-01 ~]$ conda create --name myenv python=3.8
 
 ::
 
@@ -198,7 +199,7 @@ To activate the virtual environment, run the following commands:
 
 ::
 
-    [<username>@cld-ter-ui-01 ~]$ module load anaconda3-2024.10-1
+    [<username>@cld-ter-ui-01 ~]$ module load conda-miniforge3-25.3.1
     [<username>@cld-ter-ui-01 ~]$ source .bashrc
     (base) [<username>@cld-ter-ui-01 ~]$ conda activate myenv
     (myenv) [<username>@cld-ter-ui-01 ~]$
@@ -252,7 +253,7 @@ To delete a virtual environment, run the following command:
 ::
 
 
-Use Anaconda virtual environment with SLURM
+Use Conda virtual environment with SLURM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following example shows a SLURM submit file where the needed software module is loaded before executing the user payload:
@@ -267,7 +268,7 @@ The following example shows a SLURM submit file where the needed software module
   #SBATCH --mail-type=ALL
   #SBATCH --mail-user=<email-address>
 
-  module load anaconda3-2024.10-1
+  module load conda-miniforge3-25.3.1
   source /shared/home/<username>/.bashrc
   conda activate myenv
   srun -l /shared/home/<username>/hello
