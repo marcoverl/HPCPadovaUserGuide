@@ -1,8 +1,9 @@
 Using GPUs
 ==========
 
-To use one (or more) GPUs, you need to use the `gpus` partition and you need
-to specify how many GPUs you need using the `--gres` directive.
+To use one (or more) GPUs, you need to use a partition able to provide the needed GPU accelerators (see :ref:`Available SLURM partitions<Partitions>`)
+and you need
+to specify how many and which GPUs you need using the `--gres` directive.
 E.g. with the following submit file 2 nodes with 2 H100 GPUs on each node (4 in totals) are
 requested:
 
@@ -23,9 +24,9 @@ requested:
 
 
 
-In the following example a L40S GPU (usable only from the qst partition) is requested:
+In the following example a L40S GPU is requested:
 
-  ::
+ ::
    
   #!/bin/sh
   #SBATCH --output=/shared/home/<username>/JOB-%x.out

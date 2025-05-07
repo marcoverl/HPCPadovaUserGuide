@@ -74,6 +74,11 @@ In this script we specified:
 * The program to be executed (<my-app>)  
 
 
+.. NOTE ::
+   
+   Details about the available partitions and QoS are discussed in next section.
+
+  
 
 .. WARNING ::
    
