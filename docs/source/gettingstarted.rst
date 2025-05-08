@@ -1,11 +1,5 @@
 Getting started
 ================
-.. WARNING::
-
-   The HPC cluster is not yet in production.
-   For the time being we are giving access to this facility only to a limited
-   set of beta testers.
-
 
 Apply for an account
 --------------------
@@ -80,6 +74,11 @@ In this script we specified:
 * The program to be executed (<my-app>)  
 
 
+.. NOTE ::
+   
+   Details about the available partitions and QoS are discussed in next section.
+
+  
 
 .. WARNING ::
    
@@ -115,6 +114,16 @@ consult the man pages for more information.
 +---------------------------+-----------------------------------------------------+
 
   
+Debug your job
+--------------
+If you need to debug the execution of a submitted job, and for this purpose
+you need to log on the relevant worker node:
+
+
+::
+   
+   $ srun --pty --overlap --jobid <slurmjobid> bash
+
 
 Run an interactive job
 -----------------------
