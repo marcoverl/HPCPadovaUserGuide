@@ -120,7 +120,12 @@ The following table describes the available partitions:
 
    The `gpus` and `gpus-opp` partitions can be used only if your job needs one or more GPU accelerators.  
 
-  
+
+Available QoS
+-------------
+
+
+   
 The following table summarizes which are the available QOS:
 
 
