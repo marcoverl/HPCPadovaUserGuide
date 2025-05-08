@@ -5,7 +5,7 @@ The resources provided by the INFN Padova HPC cluster are the following:
 
 *  6 CPU only nodes cld-ter-01..06: each node has 2 AMD EPYC 9654 processors
    (192 Cores, 384 threads in total) and 1.5 TB of RAM
-*  5 CPU-GPU nodes cld-ter-gpu-01..06: each node has 2 AMD EPYC 9654 processors
+*  5 CPU-GPU nodes cld-ter-gpu-01..05: each node has 2 AMD EPYC 9654 processors
    (192 Cores, 384 threads in total), 1.5 TB of RAM and 4 NVIDIA H100 80GB HBM3 GPUs
 
 These nodes are interconnected through a high bandwith, low latency Infiniband network.
@@ -40,7 +40,7 @@ In the INFN Padova HPC cluster there are:
 
 * partitions available to all users.
 * partitions reserved to specific projects (therefore usable only by the relevant users).
-* partitions available to all users that allow to use opportunically resources allocated to specific projects, when they are available.
+* partitions available to all users that allow to use opportunistically resources allocated to specific projects, when they are available.
   **Please note that jobs submitted to these partitions will be preempted (requeued) if jobs submitted to higher priority partitions require those resources.**
 
 
@@ -138,43 +138,43 @@ The following table summarizes which are the available QOS:
      - **Notes**
    * - **normal**
      - 24 hours
-     - | 60 cores, 240 GB of RAM memory
+     - | 60 cpu-threads, 240 GB of RAM memory
        | 4 GPUs NVIDIA H100 80GB HBM3
      - 60  
      - Default QoS for \*cpus\* and \*gpus\* partitions  
    * - **fast**
      - 2 hours
-     - | 80 cores, 320 GB of RAM memory
+     - | 80 cpu-threads, 320 GB of RAM memory
        | 4 GPUs NVIDIA H100 80GB HBM3
      - 100  
      - 
    * - **long**
      - 3 days
-     - | 40 cores, 160 GB of RAM memory
+     - | 40 cpu-threads, 160 GB of RAM memory
        | 2 GPUs NVIDIA H100 80GB HBM3
      - 40  
      - 
    * - **verylong**
      - 7 days
-     - | 20 cores, 80 GB of RAM memory
+     - | 20 cpu-threads, 80 GB of RAM memory
        | 2 GPUs NVIDIA H100 80GB HBM3
      - 20  
      - 
    * - **enipiml**
      - 30 days
-     - | 384 cores, 1500 GB of RAM memory
+     - | 384 cpu-threads, 1500 GB of RAM memory
        | 4 GPUs NVIDIA H100 80GB HBM3
      - 60  
      - Can be used only for the enipiml partition
    * - **enipred**
      - 30 days
-     - | 384 cores, 1500 GB of RAM memory
+     - | 384 cpu-threads, 1500 GB of RAM memory
        | 4 GPUs NVIDIA H100 80GB HBM3
      - 60  
      - Can be used only for the enipred partition
    * - **qst**
      - 30 days
-     - | 144 cores, 1500 GB of RAM memory
+     - | 144 cpu-threads, 1500 GB of RAM memory
        | 1 GPU NVIDIA L40S
      - 60  
      - Can be used only for the qst partition
